@@ -1,0 +1,33 @@
+Requirements:
+   install c++ boost library
+   One way to install it on Ubuntu is: sudo apt-get install libboost-all-dev
+
+Compile:
+   run makefile: make
+
+Run:
+   parameters: which motif, numberOfLayers, threshold, network name (file path)
+   e.g. ./motif 2 10 0.6 testNetwork
+
+   Note: 
+   1. our code support four motif type: 1. feedforward loop,  2. bifan,  3. bi-parallel, 4. cascade and delay
+   2. threshold: a number between 0 and 1
+   3. We print the selected motifs by edges, we also report the number of motifs and running time.
+   4. We also collect the nodes of selected motifs. You can check it by checking variable 'motifNodeSet'.
+
+
+Format of the network file:
+
+An edge is represented as (seperated by tab):
+   SourceNode	DestNode
+
+We seperate two layers using '---------'
+
+e.g.
+
+1	2
+2	3
+------
+1	3
+2	3
+------
